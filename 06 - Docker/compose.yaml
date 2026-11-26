@@ -27,6 +27,8 @@ services:
       - "${MAILPIT_PORT:-8025}:8025"
 
   backend:
+    # Imagem publicada no GHCR. "docker compose pull" baixa a pronta; "--build" constrói localmente.
+    image: ghcr.io/alextorresz/mesai-backend:${MESAI_TAG:-latest}
     build:
       context: "../05 - Desenvolvimento/backend"
       dockerfile: "../../06 - Docker/backend.Dockerfile"
@@ -62,6 +64,7 @@ services:
       start_period: 20s
 
   frontend:
+    image: ghcr.io/alextorresz/mesai-frontend:${MESAI_TAG:-latest}
     build:
       context: "../05 - Desenvolvimento/frontend"
       dockerfile: "../../06 - Docker/frontend.Dockerfile"

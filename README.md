@@ -27,6 +27,22 @@ docker compose down
 # apagar TUDO, inclusive o banco:  docker compose down -v
 ```
 
+### Usando as imagens prontas (GitHub Container Registry)
+
+As imagens do backend e do frontend são publicadas automaticamente pelo GitHub Actions a cada push na `main`:
+
+- `ghcr.io/alextorresz/mesai-backend:latest`
+- `ghcr.io/alextorresz/mesai-frontend:latest`
+
+Para subir **sem compilar nada** na sua máquina:
+
+```bash
+docker compose pull      # baixa as imagens prontas (banco, mailpit, backend e frontend)
+docker compose up -d     # sobe usando as imagens baixadas
+```
+
+Para usar uma versão específica, defina `MESAI_TAG` no `.env` (ex.: `MESAI_TAG=sha-61ab94c`). O `docker compose up -d --build` continua funcionando e constrói tudo localmente a partir do código.
+
 | Endereço | O quê |
 |---|---|
 | http://localhost:8080 | **Sistema Mesaí** |
@@ -55,7 +71,7 @@ O comando funciona tanto na **raiz do projeto** quanto dentro de `06 - Docker/`.
 | Frontend | React 19 + TypeScript, Vite 6, Tailwind CSS 3, React Router 7 |
 | Backend | Node.js 22, Express 5, Zod (validação), bcrypt (senhas), JWT em cookie httpOnly |
 | Banco | PostgreSQL 16 + Prisma ORM 6 (migrações versionadas) |
-| Infra | Docker Compose: `db`, `backend`, `frontend` (Nginx) e `mailpit` (SMTP de teste) |
+| Infra | Docker Compose: `db`, `backend`, `frontend` (Nginx) e `mailpit` (SMTP de teste); imagens publicadas no GHCR via GitHub Actions |
 | Testes | Vitest + Supertest (50 testes de API e de regras de negócio) |
 
 ---
