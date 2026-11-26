@@ -41,7 +41,7 @@ docker compose pull      # baixa as imagens prontas (banco, mailpit, backend e f
 docker compose up -d     # sobe usando as imagens baixadas
 ```
 
-Para usar uma versão específica, defina `MESAI_TAG` no `.env` (ex.: `MESAI_TAG=sha-61ab94c`). O `docker compose up -d --build` continua funcionando e constrói tudo localmente a partir do código.
+Para usar uma versão específica, defina `MESAI_TAG` no `.env` (ex.: `MESAI_TAG=sha-89629db`). O `docker compose up -d --build` continua funcionando e constrói tudo localmente a partir do código.
 
 | Endereço | O quê |
 |---|---|
