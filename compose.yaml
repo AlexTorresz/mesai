@@ -1,0 +1,4 @@
+# Atalho: permite rodar "docker compose up -d --build" direto na raiz do projeto.
+# A definição completa dos serviços está em "06 - Docker/compose.yaml".
+include:
+  - path: "06 - Docker/compose.yaml"

@@ -1,0 +1,50 @@
+{
+  "name": "mesai-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API do Mesaí — Cantina 67 (Express + Prisma + PostgreSQL)",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy",
+    "seed": "tsx prisma/seed.ts",
+    "seed:prod": "node dist/prisma/seed.js",
+    "test": "vitest run"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.3.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.12.1",
+    "multer": "^2.5.0",
+    "nodemailer": "^10.6.1",
+    "prisma": "^6.19.3",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.6.0",
+    "@electric-sql/pglite-socket": "^0.3.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^26.6.10",
+    "@types/nodemailer": "^8.0.2",
+    "@types/supertest": "^7.2.1",
+    "supertest": "^7.3.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.2"
+  }
+}

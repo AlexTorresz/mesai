@@ -1,0 +1,20 @@
+/* Tema 01 — Carvão Padrão (Dark Retrô) */
+:root,
+[data-theme='carvao'] {
+  --bg-app: #252527;
+  --bg-sidebar: #1d1d1f;
+  --bg-card: #f5efe6;
+  --text-on-app: #f5efe6;
+  --text-on-app-muted: #b9b2a8;
+  --accent-on-app: #e86a24;
+  color-scheme: dark;
+}
+[data-theme='creme'] {
+  --bg-app: #f4ece1;
+  --bg-sidebar: #4a2c18;
+  --bg-card: #fffdf9;
+  --text-on-app: #252527;
+  --text-on-app-muted: #6b5e52;
+  --accent-on-app: #a8471a;
+  color-scheme: light;
+}

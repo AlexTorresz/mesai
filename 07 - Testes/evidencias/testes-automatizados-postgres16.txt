@@ -1,0 +1,59 @@
+
+ RUN  v5.1.2 /home/claude/Mesai-AV2/05 - Desenvolvimento/backend
+
+ ✓ tests/orders.test.ts > CT-21 / CT-22 — cesta > itens diferentes coexistem; reduzir não fica abaixo de 1; excluir atualiza o total 267ms
+ ✓ tests/orders.test.ts > CT-23 — total com desconto por item e frete (RF-23) > confere com RN-04 em casos com e sem desconto e quantidades diferentes 238ms
+ ✓ tests/orders.test.ts > CT-24 — bloqueio por item indisponível (RF-24) > cesta sinaliza o prato e a finalização é recusada até a remoção 293ms
+ ✓ tests/orders.test.ts > CT-25 — dinheiro menor, igual e maior que o total (RF-25) > menor é recusado; igual e maior são aceitos com troco correto 642ms
+ ✓ tests/orders.test.ts > CT-26 — pedido nasce Recebido com preços congelados (RF-26 / RN-03) > cesta é esvaziada e alteração posterior do prato não muda o pedido 239ms
+ ✓ tests/orders.test.ts > CT-27 — cancelamento do Cliente dentro e fora da janela (RF-27) > cancela em Recebido 234ms
+ ✓ tests/orders.test.ts > CT-27 — cancelamento do Cliente dentro e fora da janela (RF-27) > é negado após Em preparação 252ms
+ ✓ tests/orders.test.ts > CT-28 / CT-31 / CT-30 — fluxo de status, acompanhamento e abas > só o próximo status é aceito; Cliente vê cada mudança; Entregue vai para Finalizados 341ms
+ ✓ tests/orders.test.ts > CT-32 — cancelamento pela equipe com motivo obrigatório (RF-32) > sem motivo é recusado; com motivo vira Cancelado e o Cliente vê o motivo 277ms
+ ✓ tests/orders.test.ts > CT-29 — histórico só do próprio Cliente (RF-29) > lista apenas os próprios pedidos e não abre pedido alheio 427ms
+ ✓ tests/orders.test.ts > RNF-08 — integridade monetária > colunas monetárias são numeric (decimal), não ponto flutuante 12ms
+ ✓ tests/admin.test.ts > CT-08 — acesso negado por perfil, inclusive via rota (RF-08 / RNF-02) > Cliente e Colaborador recebem 403 em rotas do Gerente 552ms
+ ✓ tests/admin.test.ts > CT-08 — acesso negado por perfil, inclusive via rota (RF-08 / RNF-02) > sem login, rotas protegidas retornam 401 4ms
+ ✓ tests/admin.test.ts > CT-10 / CT-11 — perfis e Gerente seed (RF-10, RF-11, RN-07) > existe exatamente um Gerente seed e ele consegue logar 134ms
+ ✓ tests/admin.test.ts > CT-10 / CT-11 — perfis e Gerente seed (RF-10, RF-11, RN-07) > Gerente promove e rebaixa; novo perfil vale no próximo acesso 396ms
+ ✓ tests/admin.test.ts > CT-10 / CT-11 — perfis e Gerente seed (RF-10, RF-11, RN-07) > Gerente comum não altera o seed; o seed não se rebaixa 279ms
+ ✓ tests/admin.test.ts > CT-10 / CT-11 — perfis e Gerente seed (RF-10, RF-11, RN-07) > RNF-03 — listagem de usuários mascara o CPF 185ms
+ ✓ tests/admin.test.ts > CT-12 / CT-13 — endereço e taxa de entrega (RF-12, RF-13) > Gerente salva endereço e taxa; valor aparece na cesta 388ms
+ ✓ tests/admin.test.ts > CT-14 a CT-18 — cardápio, categorias e pratos > CT-15 — CRUD de categoria 216ms
+ ✓ tests/admin.test.ts > CT-14 a CT-18 — cardápio, categorias e pratos > CT-16 — prato sem nome, descrição, valor ou foto não é criado 201ms
+ ✓ tests/admin.test.ts > CT-14 a CT-18 — cardápio, categorias e pratos > CT-14 / CT-17 — desconto exibe valor original e com desconto; limites 0,1–100 400ms
+ ✓ tests/admin.test.ts > CT-14 a CT-18 — cardápio, categorias e pratos > CT-18 — exclusão só com o nome digitado; some do cardápio e permanece em pedidos antigos 444ms
+ ✓ tests/admin.test.ts > CT-19 / CT-20 — indisponibilidade (RF-19, RF-20) > prato indisponível não vai à cesta e a marcação aparece no painel 608ms
+ ✓ tests/auth.test.ts > CT-01 — cadastro completo e incompleto (RF-01) > cria Cliente com todos os obrigatórios e opcionais vazios 184ms
+ ✓ tests/auth.test.ts > CT-01 — cadastro completo e incompleto (RF-01) > recusa cadastro sem name 6ms
+ ✓ tests/auth.test.ts > CT-01 — cadastro completo e incompleto (RF-01) > recusa cadastro sem phone 3ms
+ ✓ tests/auth.test.ts > CT-01 — cadastro completo e incompleto (RF-01) > recusa cadastro sem email 6ms
+ ✓ tests/auth.test.ts > CT-01 — cadastro completo e incompleto (RF-01) > recusa cadastro sem password 4ms
+ ✓ tests/auth.test.ts > CT-01 — cadastro completo e incompleto (RF-01) > recusa cadastro sem cpf 3ms
+ ✓ tests/auth.test.ts > CT-01 — cadastro completo e incompleto (RF-01) > recusa cadastro sem cep 3ms
+ ✓ tests/auth.test.ts > CT-01 — cadastro completo e incompleto (RF-01) > recusa cadastro sem number 3ms
+ ✓ tests/auth.test.ts > CT-02 — CPF válido, inválido e repetido (RF-02) > recusa 111.111.111-11 5ms
+ ✓ tests/auth.test.ts > CT-02 — CPF válido, inválido e repetido (RF-02) > recusa dígito verificador inválido 3ms
+ ✓ tests/auth.test.ts > CT-03 — e-mail e CPF duplicados (RF-03) > recusa e-mail já cadastrado 101ms
+ ✓ tests/auth.test.ts > CT-03 — e-mail e CPF duplicados (RF-03) > recusa CPF já cadastrado 96ms
+ ✓ tests/auth.test.ts > CT-04 — login correto e incorreto (RF-04) > abre sessão com e-mail e com CPF; mensagem genérica no erro; logout encerra 483ms
+ ✓ tests/auth.test.ts > CT-04 — login correto e incorreto (RF-04) > RNF-01 — senha não é guardada em texto puro 87ms
+ ✓ tests/auth.test.ts > CT-05 — link de recuperação válido, reutilizado e expirado (RF-05) > redefine uma vez; reutilização falha 292ms
+ ✓ tests/auth.test.ts > CT-05 — link de recuperação válido, reutilizado e expirado (RF-05) > link após 30 minutos é recusado 101ms
+ ✓ tests/auth.test.ts > CT-05 — link de recuperação válido, reutilizado e expirado (RF-05) > e-mail inexistente recebe a mesma resposta genérica 3ms
+ ✓ tests/auth.test.ts > CT-06 — segundo login derruba o primeiro (RF-06) > máquina A perde a sessão quando B entra 274ms
+ ✓ tests/auth.test.ts > CT-07 — logout por inatividade (RF-07) > após 30 min sem atividade a próxima ação exige novo login 184ms
+ ✓ tests/auth.test.ts > CT-07 — logout por inatividade (RF-07) > atualização automática (polling) não conta como atividade 181ms
+ ✓ tests/auth.test.ts > CT-09 — edição de dados e unicidade do e-mail (RF-09) > edita dados, mantém CPF, exige senha atual e respeita unicidade 539ms
+ ✓ tests/unit.test.ts > CT-02 (unidade) — validação de CPF > aceita CPF válido 2ms
+ ✓ tests/unit.test.ts > CT-02 (unidade) — validação de CPF > recusa dígito verificador errado 0ms
+ ✓ tests/unit.test.ts > CT-02 (unidade) — validação de CPF > recusa todos os dígitos iguais 0ms
+ ✓ tests/unit.test.ts > CT-02 (unidade) — validação de CPF > recusa tamanho errado 0ms
+ ✓ tests/unit.test.ts > CT-23 (unidade) — RN-04 cálculo do total > arredonda o unitário com desconto meio-para-cima em 2 casas 1ms
+ ✓ tests/unit.test.ts > CT-23 (unidade) — RN-04 cálculo do total > aplica desconto por item (nunca sobre o total) e soma o frete 0ms
+
+ Test Files  4 passed (4)
+      Tests  50 passed (50)
+   Start at  20:59:37
+   Duration  11.63s (tests 90%, import 7%, transform 3%)
+

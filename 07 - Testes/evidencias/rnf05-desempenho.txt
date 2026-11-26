@@ -1,0 +1,21 @@
+RNF-05 — tempos de resposta medidos em 25/11/2026 21:00 (stack Docker, via Nginx; 10 medições por rota)
+GET /api/dishes  0.010834s
+GET /api/dishes  0.009393s
+GET /api/dishes  0.009400s
+GET /api/dishes  0.008913s
+GET /api/dishes  0.008840s
+GET /api/dishes  0.010230s
+GET /api/dishes  0.008996s
+GET /api/dishes  0.008745s
+GET /api/dishes  0.008167s
+GET /api/dishes  0.008097s
+POST /api/cart/items  0.024608s
+POST /api/orders  0.032596s
+POST /api/cart/items  0.014445s
+POST /api/orders  0.017627s
+POST /api/cart/items  0.014508s
+POST /api/orders  0.018273s
+POST /api/cart/items  0.013912s
+POST /api/orders  0.018083s
+POST /api/cart/items  0.014951s
+POST /api/orders  0.017364s

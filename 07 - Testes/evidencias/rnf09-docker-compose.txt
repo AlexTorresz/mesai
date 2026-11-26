@@ -1,0 +1,21 @@
+== docker compose ps (após 'docker compose up -d --build') ==
+SERVICE    STATUS                    PORTS
+backend    Up 25 seconds (healthy)   3333/tcp
+db         Up 31 seconds (healthy)   5432/tcp
+frontend   Up 20 seconds (healthy)   0.0.0.0:8080->80/tcp
+mailpit    Up 31 seconds (healthy)   1025/tcp, 1110/tcp, 0.0.0.0:8025->8025/tcp
+
+== após 'docker compose down' + 'up -d' (persistência) ==
+SERVICE    STATUS
+backend    Up About a minute (healthy)
+db         Up About a minute (healthy)
+frontend   Up About a minute (healthy)
+mailpit    Up About a minute (healthy)
+
+== logs do backend (migração + seed idempotente) ==
+backend-1  | warn The configuration property `package.json#prisma` is deprecated and will be removed in Prisma 7. Please migrate to a Prisma config file (e.g., `prisma.config.ts`).
+backend-1  | 1 migration found in prisma/migrations
+backend-1  | No pending migrations to apply.
+backend-1  | [seed] Gerente padrão já existe (gerente@cantina67.com.br).
+backend-1  | [seed] Cardápio já existente — demonstração não recriada.
+backend-1  | [mesai-api] ouvindo na porta 3333

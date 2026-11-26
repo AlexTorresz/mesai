@@ -1,0 +1,7 @@
+RNF-03 — busca por dados pessoais nos logs do backend (25/11/2026 21:00)
+ocorrências de '39053344705': 0
+ocorrências de '390.533.447-05': 0
+ocorrências de 'mariana.cliente@gmail.com': 0
+ocorrências de 'Mesai@2026': 0
+linhas de log analisadas: 46
+exemplo de linha: backend-1  | POST /api/auth/login 200 89.518 ms
